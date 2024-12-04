@@ -24,11 +24,11 @@ const checkWinner = () => {
         [0, 4, 8], [2, 4, 6]            // diagonals
     ];
 
-    for (const pattern of winPatterns) {
-        const [a, b, c] = pattern;
+    for (const pattern of winPatterns) { //this checks every pattern for in winPatterns and puts them for winners. If no winner is found the game continues
+        const [a, b, c] = pattern; //a, b, and c are the three numbers in pattern. If they make up a winning pattern a winner is chosen
 
-        if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
-            return boardState[a]; // Return 'X' or 'O' as the winner
+        if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) { //This checks if b and c are the same type of symbol of a and if its empty or not. If all 3 are true we have a winner
+            return boardState[a]; // Return 'X' or 'O' as the winner. We know who the winner by checker whos turn it is when a win is declared
         }
     }
     return boardState.includes(null) ? null : 'Tie'; // Return 'Tie' if no winner and no empty cells
