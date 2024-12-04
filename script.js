@@ -1,13 +1,13 @@
 // Selectors
 const cells = document.querySelectorAll(".game-square");
 const trackTurns = document.getElementById("turn");
-const playAgainButton = document.getElementById("button-playagain");
+const playAgainButton = document.getElementById("button-play-again");
 const resetScoreButton = document.getElementById("button-reset-score")
 const scoreboardX = document.getElementById("scoreboard-x");
 const scoreboardO = document.getElementById("scoreboard-o");
 
 // Varibles
-let isXTurn = true;
+let XTurn = true;
 let boardState = Array(9).fill(null);
 let scoreX = sessionStorage.getItem('scoreX') ? parseInt(sessionStorage.getItem('scoreX')) : 0;
 let scoreO = sessionStorage.getItem('scoreO') ? parseInt(sessionStorage.getItem('scoreO')) : 0
@@ -24,5 +24,12 @@ function resetScore() { //defines the resetScore function
     sessionStorage.clear() //clears stored data
 }
 
-playAgainButton.addEventListener("click");
+function resetGame() {
+    boardState.fill(null);
+    cells.forEach(cell => cell.textContent = '');
+    XTurn = true;
+    cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+}
+
+playAgainButton.addEventListener("click", resetGame);
 resetScoreButton.addEventListener("click", resetScore);
