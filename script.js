@@ -56,9 +56,9 @@ const handleCellClick = (event) => { //Handle cell click events
                 scoreO += 1; //O gets a point
                 localStorage.setItem("scoreO", scoreO); //Which is updated to storage
             }
-            alert(`${winner} wins!`); //whoever wins gets an anouncement
+        trackTurns.textContent =(`${winner} wins!`); //whoever wins gets an anouncement
         } else { //If nobody wins...
-            alert("It's a tie!"); //Its anounced a tie
+        trackTurns.textContent =("It's a tie!"); //Its anounced a tie
         }
 
         // Update the displayed scores in the UI
