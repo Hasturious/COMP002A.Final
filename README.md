@@ -1,5 +1,5 @@
-# Hasturious.github.io
+# COMP002A.Final
 
 Author - Jean Bryant Figueroa
 Purpose - COMP001B Final Project
-Repository URL - https://hasturious.github.io/
+Link - Hasturious/COMP002A.Final
